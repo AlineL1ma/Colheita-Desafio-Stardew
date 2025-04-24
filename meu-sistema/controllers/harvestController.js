@@ -3,8 +3,8 @@ const harvest = require('../models/harvest');
 //Pra criar uma nova colheita
 exports.createHarvest = async (req, res) => {
     try {
-        const { supplier, plantation, date, quantity } = req.body;
-        const harvest = new harvest({ supplier, name, description, plantation, date, quantity });
+        const { supplier, plantation, date } = req.body;
+        const harvest = new harvest({ supplier, plantation, date });
         await harvest.save();
         res.status(201).json(harvest);
     } catch (err) {
